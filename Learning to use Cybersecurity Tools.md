@@ -109,6 +109,15 @@ This connects back to the video: when the instructor searched for `tcp contains 
     - **Left side** → Byte offset (positions in the packet)
     - **Middle column** → Hexadecimal values (actual bytes)
     - **Right column** → ASCII representation (human-readable characters, when possible)
+### Packet Capture Example
+
+<p align="center">
+  <img src="images/Screenshot%20One.png" alt="Packet Example Image" width="500">
+</p>
+
+*Example packet capture used during traffic analysis.*
+
+
 
 #### Plaintext Traffic Example:
 The video also showed an example of capturing **unencrypted data**. The instructor visited a test site that used **HTTP** instead of HTTPS. He entered a login (`admin123`) on the site, and then used the filter:
