@@ -5,14 +5,14 @@ The goal of this section is to take basic notes on my learning adventure — doc
 ---
 ## 📂 Tools Index
 - [x] 1. **Wireshark (Completed: Aug 25, 2025)**
-- [ ] 2. **Splunk** **(In Progress)**
-- [ ] 3. **Nmap** **(In Progress)**
+- [x] 2. **Splunk** **(Completed: Jan 22, 2026)**
+- [x] 3. **Nmap** **(Completed:: Jan 26, 2026)**
 - [ ] 4. **Metasploit Framework**
 - [ ] 5. **Burp Suite**
 - [ ] 6. **Kali Linux Tools (General)**
 - [ ] 7. **Security Onion**
 - [ ] 8. **Snort / Suricata (IDS/IPS)**
-- [ ] 9. **VMs & Sandbox Environments** **(In Progress)**
+- [ ] 9. **VMs & Sandbox Environments** **(Notes In Progress)**
 - [ ] 10. **Python for Cybersecurity**
 - [ ] 11. **Volatility (Memory Forensics)**
 - [ ] 12. **GRC Tools (Governance, Risk, Compliance)**
@@ -134,7 +134,7 @@ Sure enough, the username appeared in plaintext in the packets. This is a clear 
 
 ---
 ### 🧰 Tool: Splunk ✅
-*Actively Working: Jan 13, 2026*
+*Completed: Jan 22, 2026*
 
 **Purpose / Role:** 
 Splunk is a **SIEM (Security Information and Event Management)** platform used to collect, centralize, search, and visualize logs from multiple systems. In a SOC environment, Splunk helps analysts detect suspicious behavior, investigate incidents, and understand what is happening across an organization’s infrastructure from a single interface.
@@ -338,3 +338,45 @@ Each issue reinforced the importance of understanding _data flow_ before analysi
 - Transition from familiarization to detection-focused use cases
 
 ---
+### 🧰 Tool: Nmap ✅
+*Completed: Jan 26, 2026*
+
+**Purpose / Role:**  
+Nmap is a free, open-source tool used to discover hosts and services on a computer network by sending specially crafted packets and analyzing the responses to identify open ports, operating systems, and potential security vulnerabilities. 
+
+**Core Skills to Learn (according to ChatGPT):**  
+- [x] Install / Setup  
+- [x] Basic Commands  
+- [x] Common Use-Cases  
+- [x] Using it on my network  
+
+## Notes:
+
+#### **1. Tool Familiarization & Objective**
+
+To establish a baseline for the SOC Home Lab, I utilized **Nmap (via the Zenmap GUI)** to perform network discovery. The primary objective was to map the local network topology and identify active services that require monitoring within the SIEM (Splunk).
+- **Learning Resource:** [Zenmap Lab Tutorial - Nmap/Zenmap Basics](https://www.youtube.com/watch?v=ayx8luaHk2c)
+- **Methodology:** Initial testing was conducted against the `scanme.nmap.org` sandbox to verify Nmap output formats and service detection capabilities without exposing local infrastructure during the learning phase.
+#### **2. Service Enumeration & Security Observations**
+
+During testing, I observed a significant delta in open ports between the tutorial environment and live targets.
+- **Discovery:** Identified nearly 1,000 scanned ports on the test target, with a high density of "Open" vs. "Closed/Filtered" states.
+- **SOC Insight:** A high number of open ports increases the **Attack Surface**. In a production environment, this would trigger a "Hardening" task to close any non-essential services.
+
+#### **3. Topology Mapping & Subnet Discovery**
+
+I successfully executed a subnet scan (e.g., `192.168.1.0/24`) to generate a visual **Network Topology Map**.
+- **Process:** Used CIDR notation to define the scan range, identifying all interconnected nodes (VMs, host machines, and gateway).
+- **Data Sanitization (OPSEC):** For documentation purposes, all screenshots of the network topology have been sanitized. Public IP addresses and sensitive internal MAC addresses were redacted to maintain **Operations Security (OPSEC)** while still demonstrating network architectural knowledge.
+
+📸 Example Visuals
+<p align="center">
+  <img src="images/Nmap%20Output%20Example%201.png" alt="Nmap Output Example 1" width="500"> 
+</p>
+
+<p align="center">
+  <img src="images/Nmap%20Output%20Example%202.png" alt="Nmap Output Example 1" width="500"> 
+</p>
+
+*Example of Nmap Output.*
+
