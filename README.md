@@ -27,7 +27,7 @@ As projects mature, I’ll add deeper writeups, reflections, and lessons learned
 - Exploring Windows Event Logging, Splunk, and detection workflows  
 - Emphasis on understanding *why* alerts fire, not just how  
 
-👉 Repository: **SOC-Home-Lab** (linked here once created)
+👉 Repository: **[SOC-Home-Lab](https://github.com/nemo-b/SOC-Home-Lab/tree/main)**
 
 ---
 
